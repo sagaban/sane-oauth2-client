@@ -1,0 +1,13 @@
+<form class="form-register" {{action 'registerUser' on="submit"}}>
+  <h2 class="form-register-heading">Please register</h2>
+  <label for="inputEmail" class="sr-only">Email address</label>
+  {{input placeholder='Email address' value=model.email class='form-control' type="email" id="inputEmail"}}
+  <label for="inputPassword" class="sr-only">Password</label>
+  {{input placeholder='Password' value=model.password class='form-control' type="password" id="inputPassword"}}
+  {{!-- <div class="checkbox">
+    <label>
+      <input type="checkbox" value="remember-me"> Remember me
+    </label>
+  </div> --}}
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+</form>

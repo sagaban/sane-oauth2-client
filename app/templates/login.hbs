@@ -1,0 +1,15 @@
+
+<form class="form-signin" {{action 'authenticate' on="submit"}}>
+  <h2 class="form-signin-heading">Please login</h2>
+  <label for="inputEmail" class="sr-only">Email address</label>
+  {{input placeholder='Email address' value=email class='form-control' type="email" id="inputEmail"}}
+  <label for="inputPassword" class="sr-only">Password</label>
+  {{input placeholder='Password' value=password class='form-control' type="password" id="inputPassword"}}
+  {{!-- <div class="checkbox">
+    <label>
+      <input type="checkbox" value="remember-me"> Remember me
+    </label>
+  </div> --}}
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+</form><br>
+{{#link-to 'register' }}<a class="btn btn-lg btn-info btn-block" role="button" href="">Register</a>{{/link-to}}
