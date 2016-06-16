@@ -12,21 +12,24 @@ export default Ember.Controller.extend({
 
   actions: {
     authenticate() {
-      const data = this.getProperties('email', 'password');
-      const flashMessages =   this.get('flashMessages');
-      this.get('session')
+      let data = this.getProperties('email', 'password');
+      let flashMessages =   this.get('flashMessages');
+      let session = this.get('session');
+      
+      session
         .authenticate('authenticator:oauth2', data.email, data.password, 'User')
         .then(() => {
           flashMessages.success('You are loged in');
 
-          console.log(this.get('session').data.authenticated.token);
+          // console.log(this.get('session').data.authenticated.token);
+          // TODO The data is not being saved properlly in the session service
+          console.log(session);
         })
         .catch((error) => {
-          let errorMsg = error.message ? error.message : error;
-          errorMsg = error.responseJSON ? error.responseJSON.message : errorMsg;
+          let errorMsg = error ? error.message : "Login error";
           flashMessages.danger( errorMsg );
 
-          console.error("Error:", errorMsg || "Login error");
+          console.error("Error:", errorMsg);
       });
     },
   },
