@@ -1,8 +1,4 @@
 @import "bootstrap";
 
-body {
-  padding-top: 20px;
-  // background: no-repeat top center #f9f9f9;
-  // background-image: url("/images/main-background.jpg"),none;
-  background: url("/images/fba7da61.png") repeat;
-}
+//globals
+@import "app/globals";

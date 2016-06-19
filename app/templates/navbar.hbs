@@ -9,8 +9,8 @@
       </button>
       {{#link-to 'index' class="navbar-brand"}}Ember Simple Auth{{/link-to}}
     </div>
-    {{#if session.isAuthenticated}}
-      <p class="navbar-text pull-right">{{sessionAcount.account.name}}</p>
+    {{#if sessionAccount.account}}
+      <p class="navbar-text {{!--pull-right--}}">{{sessionAccount.account.email}}</p>
     {{/if}}
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav navbar-right">
